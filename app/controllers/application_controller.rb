@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do
-    if params[:username] == nil || params[:password] == nil
+    if params[:username] == "" || params[:password] == "nil"
       redirect "/failure"
     else
     user = User.new(:username => params[:username], :password => params[:password])
